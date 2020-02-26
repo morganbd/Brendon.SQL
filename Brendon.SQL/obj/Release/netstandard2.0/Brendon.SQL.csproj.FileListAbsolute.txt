@@ -1,0 +1,8 @@
+C:\Users\solar\source\repos\Brendon.SQL\Brendon.SQL\bin\Release\netstandard2.0\Brendon.SQL.deps.json
+C:\Users\solar\source\repos\Brendon.SQL\Brendon.SQL\bin\Release\netstandard2.0\Brendon.SQL.dll
+C:\Users\solar\source\repos\Brendon.SQL\Brendon.SQL\bin\Release\netstandard2.0\Brendon.SQL.pdb
+C:\Users\solar\source\repos\Brendon.SQL\Brendon.SQL\obj\Release\netstandard2.0\Brendon.SQL.csproj.CoreCompileInputs.cache
+C:\Users\solar\source\repos\Brendon.SQL\Brendon.SQL\obj\Release\netstandard2.0\Brendon.SQL.AssemblyInfoInputs.cache
+C:\Users\solar\source\repos\Brendon.SQL\Brendon.SQL\obj\Release\netstandard2.0\Brendon.SQL.AssemblyInfo.cs
+C:\Users\solar\source\repos\Brendon.SQL\Brendon.SQL\obj\Release\netstandard2.0\Brendon.SQL.dll
+C:\Users\solar\source\repos\Brendon.SQL\Brendon.SQL\obj\Release\netstandard2.0\Brendon.SQL.pdb
