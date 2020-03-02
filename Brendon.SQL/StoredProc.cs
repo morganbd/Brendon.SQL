@@ -52,6 +52,8 @@ namespace Brendon.SQL
 
                     using (SqlDataReader reader = sqlComm.ExecuteReader())
                     {
+                        List<String> columns = GetColumnNames(reader);
+
                         while (reader.HasRows)
                         {
                             while (reader.Read())
@@ -61,6 +63,12 @@ namespace Brendon.SQL
                                 for (int i = 0; i < type.GetProperties().Count(); i++)
                                 {
                                     PropertyInfo prop = type.GetProperties()[i];
+
+                                    //Validate property name exists in result set.
+                                    if (!columns.Contains(prop.Name)) continue;
+
+                                    //Validate value isn't null.
+                                    if (reader.GetValue(reader.GetOrdinal(prop.Name)) == DBNull.Value) continue;
 
                                     prop.SetValue(item, reader.GetValue(reader.GetOrdinal(prop.Name)));
                                 }
@@ -101,11 +109,19 @@ namespace Brendon.SQL
 
                     using (SqlDataReader reader = sqlComm.ExecuteReader(CommandBehavior.SingleRow))
                     {
+                        List<String> columns = GetColumnNames(reader);
+
                         while (reader.Read())
                         {
                             for (int i = 0; i < type.GetProperties().Count(); i++)
                             {
                                 PropertyInfo prop = type.GetProperties()[i];
+
+                                //Validate property name exists in result set.
+                                if (!columns.Contains(prop.Name)) continue;
+
+                                //Validate value isn't null.
+                                if (reader.GetValue(reader.GetOrdinal(prop.Name)) == DBNull.Value) continue;
 
                                 prop.SetValue(item, reader.GetValue(reader.GetOrdinal(prop.Name)));
                             }
@@ -155,25 +171,16 @@ namespace Brendon.SQL
             }
         }
 
-        private T ConvertResultToObject<T>(SqlDataReader reader)  
+        private List<String> GetColumnNames(SqlDataReader reader)
         {
-            T item = (T)Activator.CreateInstance(typeof(T));
-            Type type = typeof(T);
+            List<String> columns = new List<String>();
 
-                while (reader.HasRows)
-                {
-                    while (reader.Read())
-                    {
-                        for (int i = 0; i < type.GetProperties().Count(); i++)
-                        {
-                            PropertyInfo prop = type.GetProperties()[i];
+            for (int i = 0; i < reader.FieldCount; i++)
+            {
+                columns.Add(reader.GetName(i));
+            }
 
-                            prop.SetValue(item, reader.GetValue(reader.GetOrdinal(prop.Name)));
-                        }
-                    }
-                }
-
-            return item;
+            return columns;
         }
 
         #endregion
