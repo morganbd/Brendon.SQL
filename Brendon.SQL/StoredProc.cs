@@ -24,6 +24,8 @@ namespace Brendon.SQL
         {
             _connString = sConnString;
             _spName = sSPName;
+
+            this.Params = new Dictionary<string, object>();
         }
 
         #endregion

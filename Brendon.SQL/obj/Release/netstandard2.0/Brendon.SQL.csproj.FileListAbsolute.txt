@@ -5,3 +5,5 @@ C:\Users\solar\source\repos\Brendon.SQL\Brendon.SQL\obj\Release\netstandard2.0\B
 C:\Users\solar\source\repos\Brendon.SQL\Brendon.SQL\obj\Release\netstandard2.0\Brendon.SQL.AssemblyInfo.cs
 C:\Users\solar\source\repos\Brendon.SQL\Brendon.SQL\obj\Release\netstandard2.0\Brendon.SQL.dll
 C:\Users\solar\source\repos\Brendon.SQL\Brendon.SQL\obj\Release\netstandard2.0\Brendon.SQL.pdb
+C:\Users\solar\source\repos\Brendon.SQL\Brendon.SQL\obj\Release\netstandard2.0\Brendon.SQL.csprojAssemblyReference.cache
+C:\Users\solar\source\repos\Brendon.SQL\Brendon.SQL\obj\Release\netstandard2.0\Brendon.SQL.csproj.CoreCompileInputs.cache
