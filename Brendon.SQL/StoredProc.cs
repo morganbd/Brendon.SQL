@@ -32,6 +32,9 @@ namespace Brendon.SQL
 
         #region Public Functions
 
+        /// <summary>
+        /// Execute a single SQL Stored Procedure that does not return anything.
+        /// </summary>
         public void ExecuteQuery()
         {
             using (SqlConnection conn = new SqlConnection(_connString))
@@ -50,7 +53,6 @@ namespace Brendon.SQL
                 }
             }
         }
-
         /// <summary>
         /// Translate SQL results into enumerable list of specified object type.
         /// </summary>
