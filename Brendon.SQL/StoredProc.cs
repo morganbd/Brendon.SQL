@@ -53,6 +53,7 @@ namespace Brendon.SQL
                 }
             }
         }
+
         /// <summary>
         /// Translate SQL results into enumerable list of specified object type.
         /// </summary>
