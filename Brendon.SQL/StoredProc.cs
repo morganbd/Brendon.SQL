@@ -32,6 +32,25 @@ namespace Brendon.SQL
 
         #region Public Functions
 
+        public void ExecuteQuery()
+        {
+            using (SqlConnection conn = new SqlConnection(_connString))
+            {
+                using (SqlCommand sqlComm = new SqlCommand(_spName, conn))
+                {
+                    LoadParams(sqlComm);
+
+                    sqlComm.CommandType = CommandType.StoredProcedure;
+
+                    conn.Open();
+
+                    sqlComm.ExecuteNonQuery();
+
+                    conn.Close();
+                }
+            }
+        }
+
         /// <summary>
         /// Translate SQL results into enumerable list of specified object type.
         /// </summary>
